@@ -1,5 +1,6 @@
+
 import { useState } from "react";
-import { push, ref, serverTimestamp, set } from "firebase/database";
+import { push, ref, set } from "firebase/database";
 import { auth, database } from "../services/firebase";
 import "../styles/SatisfactionSurveyPage.css";
 
@@ -50,9 +51,7 @@ export default function SatisfactionSurveyPage() {
         ...ratings,
         suggestion: suggestion.trim(),
         user_id: currentUser.uid,
-        user_email: currentUser.email || "",
-        user_name: currentUser.displayName || "",
-        created_at: serverTimestamp(),
+        created_at: Date.now(),
       });
 
       setRatings({});
@@ -61,7 +60,7 @@ export default function SatisfactionSurveyPage() {
     } catch (err) {
       console.error("บันทึกแบบประเมินไม่สำเร็จ:", err);
       setMessage(
-        "บันทึกไม่สำเร็จ กรุณาตรวจสอบการเชื่อมต่อ Firebase และสิทธิ์ Database Rules"
+        `บันทึกไม่สำเร็จ: ${err.code || "ERROR"} - ${err.message}`
       );
     } finally {
       setBusy(false);
