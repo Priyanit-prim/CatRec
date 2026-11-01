@@ -1,0 +1,232 @@
+
+/* CatRec Satisfaction Survey */
+.survey-page {
+  min-height: 100vh;
+  padding: 42px 20px 60px;
+  background: #fff7fa;
+  color: #604354;
+  font-family: inherit;
+}
+
+.survey-card {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 36px 40px;
+  background: #ffffff;
+  border: 1px solid #f2dce6;
+  border-radius: 22px;
+  box-shadow: 0 8px 30px rgba(169, 95, 131, 0.09);
+}
+
+.survey-eyebrow {
+  margin: 0 0 10px;
+  color: #bc7b9e;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.survey-card h1 {
+  margin: 0 0 14px;
+  color: #a95f83;
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1.4;
+  text-align: center;
+}
+
+.survey-intro {
+  margin: 0 auto 10px;
+  color: #806b78;
+  font-size: 16px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.survey-scale {
+  margin: 0 auto 30px;
+  color: #a0788d;
+  font-size: 14px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.survey-question {
+  min-width: 0;
+  margin: 0 0 18px;
+  padding: 20px 22px 22px;
+  background: #fffafd;
+  border: 1px solid #f0d8e3;
+  border-radius: 14px;
+}
+
+.survey-question legend {
+  max-width: 100%;
+  padding: 0 8px;
+  color: #754961;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+.survey-question legend span {
+  color: #cf668e;
+}
+
+.survey-options {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.survey-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 12px 6px;
+  color: #725767;
+  background: #ffffff;
+  border: 1px solid #efd7e2;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.survey-option:hover {
+  background: #fff0f6;
+  border-color: #dba0bb;
+}
+
+.survey-option:has(input:checked) {
+  color: #974d70;
+  background: #fbe8f0;
+  border-color: #c47c9f;
+  box-shadow: 0 0 0 2px rgba(196, 124, 159, 0.12);
+}
+
+.survey-option input {
+  width: 17px;
+  height: 17px;
+  margin: 0;
+  accent-color: #bd7296;
+  cursor: pointer;
+}
+
+.survey-option span {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.survey-label {
+  display: block;
+  margin: 24px 0 10px;
+  color: #754961;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.survey-card textarea {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 110px;
+  padding: 13px 15px;
+  color: #604354;
+  background: #fffafd;
+  border: 1px solid #e8c5d5;
+  border-radius: 12px;
+  font: inherit;
+  line-height: 1.7;
+  resize: vertical;
+}
+
+.survey-card textarea::placeholder {
+  color: #b39aa8;
+}
+
+.survey-card textarea:focus {
+  outline: 2px solid #e8b6cc;
+  outline-offset: 2px;
+  border-color: #c47c9f;
+}
+
+.survey-message {
+  margin: 18px 0 0;
+  padding: 13px 16px;
+  color: #754961;
+  background: #fff0f6;
+  border: 1px solid #f0d0df;
+  border-radius: 10px;
+  line-height: 1.7;
+}
+
+.survey-submit {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 26px auto 0;
+  padding: 14px 24px;
+  color: #ffffff;
+  background: #c47c9f;
+  border: none;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 5px 14px rgba(169, 95, 131, 0.18);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.survey-submit:hover:not(:disabled) {
+  background: #a95f83;
+  transform: translateY(-2px);
+}
+
+.survey-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+@media (max-width: 650px) {
+  .survey-page {
+    padding: 24px 12px 40px;
+  }
+
+  .survey-card {
+    padding: 26px 16px;
+    border-radius: 16px;
+  }
+
+  .survey-scale {
+    font-size: 13px;
+  }
+
+  .survey-question {
+    padding: 16px 12px;
+  }
+
+  .survey-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .survey-option:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .survey-option {
+    flex-direction: row;
+    padding: 11px 6px;
+  }
+
+  .survey-option span {
+    font-size: 13px;
+  }
+}
